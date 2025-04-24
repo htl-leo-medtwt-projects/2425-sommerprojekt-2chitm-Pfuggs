@@ -11,20 +11,43 @@
     <div id="navTop">
         <div id="left">
             <span id="rotorText">Rotor</span>
-            <div id="mapClosed">
-                <span id="mapText">Map</span>
+            <div id="mapClosed" onclick="openMap()">
+                <span class="mapText">Map</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
                     <path d="M17.9998 19.7571L25.4245 12.3325L27.5458 14.4538L17.9998 23.9998L8.45398 14.4538L10.5753 12.3325L17.9998 19.7571Z" fill="#EBEBEB"/>
                   </svg>
             </div>
-            <div id="hubClosed">
-                <span id="hubText">Hub</span>
+            <div id="hubClosed" onclick="openHub()">
+                <span class="hubText">Hub</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <path d="M17.9998 19.7571L25.4245 12.3325L27.5458 14.4538L17.9998 23.9998L8.45398 14.4538L10.5753 12.3325L17.9998 19.7571Z" fill="#EBEBEB"/>
+                  </svg>
             </div>
             <div id="mapOpen">
-                
+                <div class="dropdownOuter">
+                    <div class="dropdownTop" onclick="closeMap()">
+                        <span class="mapText">Map</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                            <path d="M18.0002 16.2429L10.5755 23.6675L8.45416 21.5462L18.0002 12.0002L27.546 21.5462L25.4247 23.6675L18.0002 16.2429Z" fill="#EBEBEB"/>
+                          </svg>
+                    </div>
+                    <div class="dropdownBottom" onclick="closeHub()">
+                        <span class="hubText">Hub</span>
+                    </div>
+                </div>
             </div>
             <div id="hubOpen">
-
+                <div class="dropdownOuter">
+                    <div class="dropdownTop" onclick="closeHub()">
+                        <span class="hubText">Hub</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                            <path d="M18.0002 16.2429L10.5755 23.6675L8.45416 21.5462L18.0002 12.0002L27.546 21.5462L25.4247 23.6675L18.0002 16.2429Z" fill="#EBEBEB"/>
+                          </svg>
+                    </div>
+                    <div class="dropdownBottom" onclick="closeMap()">
+                        <span class="mapText">Map</span>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="right">

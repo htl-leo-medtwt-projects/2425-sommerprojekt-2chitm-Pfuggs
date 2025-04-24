@@ -46,8 +46,16 @@ body {
     line-height: normal;
 }
 
-#mapText {
+.mapText {
     color: var(--map, #DF3902);
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.hubText {
+    color: var(--hub, #3EB900);
     font-size: 2.25rem;
     font-style: normal;
     font-weight: 600;
@@ -65,6 +73,51 @@ body {
 #mapClosed svg {
     width: 2.25rem;
     height: 2.25rem;
+}
+
+#hubClosed {
+    display: flex;
+    width: 6.75rem;
+    height: 2.75rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#hubClosed svg {
+    width: 2.25rem;
+    height: 2.25rem;
+}
+
+#mapOpen, #hubOpen {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.dropdownOuter {
+    display: flex;
+    padding: 0.25rem 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 0.5rem;
+    border: 2px solid var(--primary-2, #585858);
+    background: var(--background, #0C0C0C);
+}
+
+.dropdownTop {
+    display: flex;
+    padding: 0.125rem 0rem;
+    align-items: center;
+    align-self: stretch;
+    border-bottom: 2px solid var(--primary-2, #585858);
+}
+
+.dropdownBottom {
+    display: flex;
+    padding: 0.125rem 0rem;
+    align-items: center;
+    gap: 0.625rem;
+    align-self: stretch;
 }
 
 #navTop #right {
