@@ -22,10 +22,12 @@ body {
     padding: 0;
 }
 
+/*#region TopNav*/
 #navTop {
     display: flex;
-    width: 25.75rem;
+    width: 100%;
     padding: 1.5rem;
+    box-sizing: border-box;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--primary-1, #EBEBEB);
@@ -36,6 +38,7 @@ body {
 #navTop #left {
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 #rotorText {
@@ -60,6 +63,18 @@ body {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+}
+
+#mapClosed, #hubClosed {
+    position: absolute;
+    left: 6.55rem;
+    top: -0.1rem;
+}
+
+#mapOpen, #hubOpen {
+    position: absolute;
+    left: 6rem;
+    top: -0.5rem;
 }
 
 #mapClosed {
@@ -125,3 +140,15 @@ body {
     align-items: center;
     gap: 1rem;
 }
+/*#endregion */
+
+/*#region MapStuff*/
+#contentMap {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+/*#endregion*/
