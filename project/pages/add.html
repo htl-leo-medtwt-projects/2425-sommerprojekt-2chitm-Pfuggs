@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/add.css">
+</head>
+<body>
+    <div id="content">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" id="closeBtn" onclick="window.history.go(-1);">
+            <path d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z" fill="#EBEBEB"/>
+        </svg>
+        <form>
+            <input type="text" name="titleInput" id="titleInput" placeholder="Enter title...">
+            <div id="groupCategory">
+                <select name="groupSelect" id="groupSelect">
+                    <option value="" disabled selected hidden>Select Group</option>
+                    <option value="global">Global</option>
+                </select>
+                <select name="categorySelect" id="categorySelect">
+                    <option value="" disabled selected hidden>Category</option>
+                </select>
+            </div>
+            <input type="text" name="bodyInput" id="bodyInput" placeholder="Enter body text...">
+            <div>
+                <div>
+                    <input type="text" name="latInput" id="latInput" placeholder="Enter latitude...">
+                    <input type="text" name="lonInput" id="lonInput" placeholder="Enter longitude...">
+                    <p>Or pick location on map</p>
+                </div>
+                <div id="addMap"></div>
+            </div>
+            <button type="submit" id="submitButton">POST</button>
+        </form>
+    </div>
+</body>
+</html>

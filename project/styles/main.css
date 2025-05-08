@@ -22,7 +22,7 @@ body {
     padding: 0;
 }
 
-/*#region TopNav*/
+/*#region NavTop*/
 #navTop {
     display: flex;
     width: 100%;
@@ -67,13 +67,13 @@ body {
 
 #mapClosed, #hubClosed {
     position: absolute;
-    left: 6.55rem;
+    left: 6.05rem;
     top: -0.1rem;
 }
 
 #mapOpen, #hubOpen {
     position: absolute;
-    left: 6rem;
+    left: 5.5rem;
     top: -0.5rem;
 }
 
@@ -140,6 +140,41 @@ body {
     align-items: center;
     gap: 1rem;
 }
+
+#userIcon {
+    border-radius: 100%;
+    border: 3px solid var(--primary-1);
+    box-sizing: border-box;
+}
+
+#addButton {
+    display: flex;
+    padding: 1rem;
+    box-sizing: border-box;
+    align-items: center;
+    gap: 0.6875rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -1rem;
+    border-radius: 6.25rem;
+    border: 2px solid var(--primary-1, #EBEBEB);
+    background: var(--background, #0C0C0C);
+}
+
+#addButton svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+#addButton p {
+    color: var(--primary-1, #EBEBEB);
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+}
 /*#endregion */
 
 /*#region MapStuff*/
@@ -150,5 +185,28 @@ body {
     left: 0;
     top: 0;
     z-index: -1;
+}
+/*#endregion*/
+
+/*#region NavBottom*/
+#navBottom {
+    display: flex;
+    width: 100%;
+    height: 5rem;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    border-top: 1px solid var(--primary-1, #EBEBEB);
+    background: var(--background-transparent, rgba(12, 12, 12, 0.70));
+    backdrop-filter: blur(4px);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+#navBottom svg {
+    width: 2rem;
+    height: 2rem;
 }
 /*#endregion*/

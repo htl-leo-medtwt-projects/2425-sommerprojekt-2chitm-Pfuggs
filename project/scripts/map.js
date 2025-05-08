@@ -50,15 +50,20 @@ map.on('click', onMapClick);
 /* Add spot */
 function addSpot(lat, lon) {
     let spots = loadSpots();
-    console.log(spots);
     if (spots == null) {
         spots = [{'lat': lat, 'lon': lon}]
     } else {
         spots[spots.length] = {'lat': lat, 'lon': lon}
     }
     localStorage.setItem('spots', JSON.stringify(spots));
-    console.log(spots);
 
     map.closePopup();
     loadMarkers();
+}
+
+/* Open "Add spot" menu */
+function addSpotMenu(lat=-2000, lon=-2000) {
+    localStorage.setItem('lat', lat);
+    localStorage.setItem('lon', lon);
+    window.location.href = 'pages/add.html';
 }

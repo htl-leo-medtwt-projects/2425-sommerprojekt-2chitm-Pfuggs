@@ -1,0 +1,84 @@
+:root {
+    --background: #0C0C0C;
+    --background-transparent: #0c0c0cb2;
+    --primary-1: #EBEBEB;
+    --primary-2: #585858;
+    --hub: #63B900;
+    --map: #DF3902;
+    --accent-1: #00EC6E;
+    --accent-2: #DF0257;
+    --accent-3: #9747FF;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background);
+}
+
+#content {
+    display: flex;
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    box-sizing: border-box;
+}
+
+#closeBtn {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+#titleInput, #bodyInput {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 2px solid var(--primary-2);
+    background-color: var(--background);
+    color: var(--primary-1);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+#titleInput {
+    font-size: 1.5rem;
+}
+
+#bodyInput {
+    font-size: 1rem;
+}
+
+#groupCategory {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#groupSelect, #categorySelect {
+    border-radius: 0.25rem;
+    border: 2px solid var(--primary-2);
+    background-color: var(--background);
+    color: var(--primary-1);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: 0.5rem;
+}
