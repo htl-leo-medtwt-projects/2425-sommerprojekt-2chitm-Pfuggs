@@ -8,7 +8,7 @@ function loadSpots() {
 }
 
 /* Setup Map */
-var map = L.map('contentMap').setView([48.268258, 14.252061], 12);
+var map = L.map('contentMap', {attributionControl: false, zoomControl: false}).setView([48.268258, 14.252061], 12);
 
 // Satellite imagery layer
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -41,25 +41,11 @@ var popup = L.popup();
 function onMapClick(e) {
     popup
         .setLatLng(e.latlng)
-        .setContent(`<div onclick="addSpot(${e.latlng.lat}, ${e.latlng.lng})">Add Spot</div>`)
+        .setContent(`<div onclick="addSpotMenu(${e.latlng.lat}, ${e.latlng.lng})">Add Spot</div>`)
         .openOn(map);
 }
 
 map.on('click', onMapClick);
-
-/* Add spot */
-function addSpot(lat, lon) {
-    let spots = loadSpots();
-    if (spots == null) {
-        spots = [{'lat': lat, 'lon': lon}]
-    } else {
-        spots[spots.length] = {'lat': lat, 'lon': lon}
-    }
-    localStorage.setItem('spots', JSON.stringify(spots));
-
-    map.closePopup();
-    loadMarkers();
-}
 
 /* Open "Add spot" menu */
 function addSpotMenu(lat=-2000, lon=-2000) {

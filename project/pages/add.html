@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <script src="../scripts/add.js" defer></script>
     <link rel="stylesheet" href="../styles/add.css">
 </head>
 <body>
@@ -11,22 +18,24 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" id="closeBtn" onclick="window.history.go(-1);">
             <path d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z" fill="#EBEBEB"/>
         </svg>
-        <form>
-            <input type="text" name="titleInput" id="titleInput" placeholder="Enter title...">
+        <form onsubmit="addSpot(event)">
+            <input type="text" name="titleInput" id="titleInput" placeholder="Enter title..." required>
+            
+            <!-- not used yet -->
             <div id="groupCategory">
-                <select name="groupSelect" id="groupSelect">
+                <select name="groupSelect" id="groupSelect"> 
                     <option value="" disabled selected hidden>Select Group</option>
-                    <option value="global">Global</option>
                 </select>
                 <select name="categorySelect" id="categorySelect">
                     <option value="" disabled selected hidden>Category</option>
                 </select>
             </div>
-            <input type="text" name="bodyInput" id="bodyInput" placeholder="Enter body text...">
-            <div>
-                <div>
-                    <input type="text" name="latInput" id="latInput" placeholder="Enter latitude...">
-                    <input type="text" name="lonInput" id="lonInput" placeholder="Enter longitude...">
+
+            <textarea name="bodyInput" id="bodyInput" rows="10" placeholder='Enter body text...' required></textarea>
+            <div id="mapOuter">
+                <div id="mapInner">
+                    <input type="text" name="latInput" id="latInput" placeholder="Enter latitude..." required>
+                    <input type="text" name="lonInput" id="lonInput" placeholder="Enter longitude..." required>
                     <p>Or pick location on map</p>
                 </div>
                 <div id="addMap"></div>
