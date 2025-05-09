@@ -29,6 +29,7 @@ function loadMarkers() {
     if (spots != null) {
         for (let i = 0; i < spots.length; i++) {
             markers[i] = L.marker([spots[i].lat, spots[i].lon]).addTo(map);
+            markers[i].bindPopup(`<b>${spots[i].title}</b><br><div>More</div>`);
         }
     }
 }

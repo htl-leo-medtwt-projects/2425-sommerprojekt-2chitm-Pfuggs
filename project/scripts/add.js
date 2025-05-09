@@ -11,7 +11,15 @@ if (localStorage.getItem("lat") == null || localStorage.getItem("lon") == null |
 localStorage.removeItem("lat");
 localStorage.removeItem("lon");
 
-var map = L.map('addMap', {attributionControl: false, zoomControl: false}).setView(defaultCoords, 12);
+let zoomLevel = 12;
+var map = L.map('addMap', {attributionControl: false, zoomControl: false, dragging: false, scrollWheelZoom: false, doubleClickZoom: false, touchZoom: false}).setView(defaultCoords, zoomLevel);
+
+function updateMapPos() {
+    let newCoords = [document.getElementById("latInput").value, document.getElementById("lonInput").value];
+    if (newCoords[0] != null && newCoords[1] != null) {
+        map.setView(newCoords, zoomLevel);
+    }
+}
 
 // Satellite imagery layer
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {

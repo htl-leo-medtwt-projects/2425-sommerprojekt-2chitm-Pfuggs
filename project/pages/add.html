@@ -34,8 +34,8 @@
             <textarea name="bodyInput" id="bodyInput" rows="10" placeholder='Enter body text...' required></textarea>
             <div id="mapOuter">
                 <div id="mapInner">
-                    <input type="text" name="latInput" id="latInput" placeholder="Enter latitude..." required>
-                    <input type="text" name="lonInput" id="lonInput" placeholder="Enter longitude..." required>
+                    <input type="number" min="-90" max="90" name="latInput" id="latInput" placeholder="Enter latitude..." onchange="updateMapPos()" required>
+                    <input type="number" min="-180" max="180" name="lonInput" id="lonInput" placeholder="Enter longitude..." onchange="updateMapPos()" required>
                     <p>Or pick location on map</p>
                 </div>
                 <div id="addMap"></div>
