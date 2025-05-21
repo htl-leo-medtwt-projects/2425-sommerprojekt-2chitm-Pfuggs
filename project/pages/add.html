@@ -20,7 +20,6 @@
         </svg>
         <form onsubmit="addSpot(event)">
             <input type="text" name="titleInput" id="titleInput" placeholder="Enter title..." required>
-            <input type="text" name="accessiblityInput" id="accessibilityInput" placeholder="Enter accessibility..." required>
             
             <!-- not functional -->
             <div id="groupCategory">
@@ -31,7 +30,8 @@
                     <option value="" disabled selected hidden>Category</option>
                 </select>
             </div>
-
+            
+            <input type="text" name="accessiblityInput" id="accessibilityInput" placeholder="Enter accessibility..." required>
             <textarea name="bodyInput" id="bodyInput" rows="10" placeholder='Enter body text...' required></textarea>
             <div id="mapOuter">
                 <div id="mapInner">
