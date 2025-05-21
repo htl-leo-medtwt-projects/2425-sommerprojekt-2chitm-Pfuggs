@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RotorMap | Add Spot</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
     crossorigin=""/>
@@ -38,8 +38,9 @@
                     <input type="number" min="-180" max="180" step="any" name="lonInput" id="lonInput" placeholder="Enter longitude..." onchange="updateMapPos()" required>
                     <p>Or pick location on map</p>
                 </div>
-                <div id="addMap"></div>
+                <div id="addMap" onclick="openBigMap()"></div>
             </div>
+            <div id="bigMap"></div>
             <button type="submit" id="submitButton">POST</button>
         </form>
     </div>

@@ -1,0 +1,85 @@
+:root {
+    --background: #0C0C0C;
+    --background-transparent: #0c0c0cb2;
+    --primary-1: #EBEBEB;
+    --primary-2: #585858;
+    --hub: #63B900;
+    --map: #DF3902;
+    --accent-1: #00EC6E;
+    --accent-2: #DF0257;
+    --accent-3: #9747FF;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#content {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.625rem;
+    background: var(--background);
+    box-sizing: border-box;
+}
+
+#postOuter {
+    display: flex;
+    padding: 1rem 0.75rem;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    align-self: stretch;
+    border-bottom: 1px solid var(--primary-2);
+    background: var(--background);
+}
+
+#postInner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    align-self: stretch;
+}
+
+#postTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+#postTitleLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    flex: 1 0 0;
+}
+
+#postTitleText {
+    color: var(--primary-1);
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+#postCoords {
+    color: var(--accent-2);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}

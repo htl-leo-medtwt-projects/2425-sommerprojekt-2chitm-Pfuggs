@@ -1,4 +1,6 @@
 let defaultCoords = [];
+document.getElementById("bigMap").style.display = "none";
+document.getElementById("addMap").style.display = "";
 
 if (localStorage.getItem("lat") == null || localStorage.getItem("lon") == null || (localStorage.getItem("lat") == -2000 && localStorage.getItem("lon") == -2000)) {
     defaultCoords = [48.268258, 14.252061];
@@ -13,25 +15,58 @@ localStorage.removeItem("lon");
 
 let zoomLevel = 12;
 var map = L.map('addMap', {attributionControl: false, zoomControl: false, dragging: false, scrollWheelZoom: false, doubleClickZoom: false, touchZoom: false}).setView(defaultCoords, zoomLevel);
+var bigMap = L.map('bigMap', {attributionControl: false, zoomControl: false}).setView(defaultCoords, zoomLevel);
 
 function updateMapPos() {
     let newCoords = [document.getElementById("latInput").value, document.getElementById("lonInput").value];
     if (newCoords[0] != null && newCoords[1] != null) {
         map.setView(newCoords, zoomLevel);
+        bigMap.setView(newCoords, zoomLevel);
     }
 }
+
+function openBigMap() {
+    document.getElementById("bigMap").style.display = "";
+    document.getElementById("addMap").style.display = "none";
+}
+
+function setCoords(lat, lng) {
+    let newCoords = [lat, lng];
+    if (newCoords[0] != null && newCoords[1] != null) {
+        map.setView(newCoords, zoomLevel);
+        bigMap.setView(newCoords, zoomLevel);
+    }
+    document.getElementById("latInput").value = lat;
+    document.getElementById("lonInput").value = lng;
+    document.getElementById("bigMap").style.display = "none";
+    document.getElementById("addMap").style.display = "";
+}
+
+function onMapClick(e) {
+    setCoords(e.latlng.lat, e.latlng.lng);
+}
+
+bigMap.on('click', onMapClick);
 
 // Satellite imagery layer
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     attribution: 'Imagery © Esri',
     maxZoom: 19
 }).addTo(map);
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Imagery © Esri',
+    maxZoom: 19
+}).addTo(bigMap);
 
 // Labels and country outlines layer
 L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
     attribution: 'Labels © Esri',
     maxZoom: 19
 }).addTo(map);
+L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Labels © Esri',
+    maxZoom: 19
+}).addTo(bigMap);
 
 function loadSpots() {
     let spots = JSON.parse(localStorage.getItem('spots'));

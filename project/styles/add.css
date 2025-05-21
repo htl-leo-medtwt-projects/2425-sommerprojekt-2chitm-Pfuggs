@@ -125,6 +125,17 @@ form {
     width: 8rem;
     height: 8rem;
     border-radius: 0.5rem;
+    z-index: 1;
+}
+
+#bigMap {
+    width: 90vw;
+    height: 80vh;
+    position: absolute;
+    left: 5vw;
+    top: 7vh;
+    z-index: 2;
+    border-radius: 1rem;
 }
 
 #submitButton {
