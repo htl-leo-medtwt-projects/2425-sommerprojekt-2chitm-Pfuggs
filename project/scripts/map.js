@@ -29,7 +29,7 @@ function loadMarkers() {
     if (spots != null) {
         for (let i = 0; i < spots.length; i++) {
             markers[i] = L.marker([spots[i].lat, spots[i].lon]).addTo(map);
-            markers[i].bindPopup(`<b>${spots[i].title}</b><br><div>More</div>`);
+            markers[i].bindPopup(`<b>${spots[i].title}</b><br><div onclick="goToSpot(${spots[i].index})">More</div>`);
         }
     }
 }
@@ -53,4 +53,9 @@ function addSpotMenu(lat=-2000, lon=-2000) {
     localStorage.setItem('lat', lat);
     localStorage.setItem('lon', lon);
     window.location.href = 'pages/add.html';
+}
+
+function goToSpot(index) {
+    localStorage.setItem("postIndex", index);
+    window.location.href = "./pages/post.html"
 }

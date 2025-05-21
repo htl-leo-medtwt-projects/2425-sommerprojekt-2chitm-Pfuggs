@@ -14,11 +14,13 @@
 
 * {
     font-family: "Inter", sans-serif;
+    color: var(--primary-1);
 }
 
 body {
     margin: 0;
     padding: 0;
+    background-color: var(--background);
 }
 
 #content {
@@ -33,6 +35,43 @@ body {
     box-sizing: border-box;
 }
 
+#comments {
+    padding-bottom: 4rem;
+}
+
+#backBtn {
+    height: 2rem;
+    width: 2rem;
+    color: var(--primary-1);
+}
+
+#postGroupCategory {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+#postGroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#postCategory {
+    display: flex;
+    padding: 0.25rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--primary-1);
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
 #postOuter {
     display: flex;
     padding: 1rem 0.75rem;
@@ -43,6 +82,8 @@ body {
     align-self: stretch;
     border-bottom: 1px solid var(--primary-2);
     background: var(--background);
+    position: sticky;
+    top: 0;
 }
 
 #postInner {
@@ -64,12 +105,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.25rem;
-    flex: 1 0 0;
+    gap: 0;
+    width: auto;
+}
+
+#postTitleLeft * {
+    margin: 0.3rem 0;
 }
 
 #postTitleText {
-    color: var(--primary-1);
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 600;
@@ -82,4 +126,89 @@ body {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+}
+
+#postAccessibility {
+    color: var(--accent-2);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+#accessbilityList {
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+#postMap {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 0.5rem;
+}
+
+#commentField {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    width: 25.75rem;
+    padding: 0.75rem;
+    align-items: center;
+    gap: 0.75rem;
+    border-top: 1px solid var(--primary-1);
+    background: var(--background-transparent);
+    backdrop-filter: blur(4px);
+    box-sizing: border-box;
+}
+
+#commentInput {
+    display: flex;
+    padding: 0.25rem 0.5rem;
+    align-items: center;
+    gap: 0.625rem;
+    flex: 1 0 0;
+    border-radius: 0.5rem;
+    border: 2px solid var(--primary-2);
+    margin: 0;
+    background-color: var(--background);
+    font-size: 1.5rem;
+    color: var(--primary-1);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+#commentSubmit {
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+.comment {
+    display: flex;
+    padding: 0.625rem;
+    align-items: flex-start;
+    gap: 0.625rem;
+    align-self: stretch;
+}
+
+.commentRight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    flex: 1 0 0;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.commentRight * {
+    margin: 0;
 }

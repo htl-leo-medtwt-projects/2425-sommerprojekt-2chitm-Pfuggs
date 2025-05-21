@@ -4,27 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RotorMap | Post</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
     <link rel="stylesheet" href="../styles/post.css">
-    <script src="../scripts/post.js"></script>
+    <script src="../scripts/post.js" defer></script>
 </head>
 <body>
     <div id="content">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <path d="M10.4379 14.6665H26.6667V17.3332H10.4379L17.5899 24.4851L15.7043 26.3707L5.33337 15.9999L15.7043 5.62891L17.5899 7.51452L10.4379 14.6665Z" fill="#EBEBEB"/>
-        </svg>
+        <div id="backBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" onclick="window.history.go(-1)">
+                <path d="M10.4379 14.6665H26.6667V17.3332H10.4379L17.5899 24.4851L15.7043 26.3707L5.33337 15.9999L15.7043 5.62891L17.5899 7.51452L10.4379 14.6665Z" fill="#EBEBEB"/>
+            </svg>
+        </div>
         <div id="postOuter">
+            <div id="postGroupCategory">
+                <p id="postGroup">/group</p>
+                <p id="postCategory">Category</p>
+            </div>
             <div id="postInner">
                 <div id="postTitle">
                     <div id="postTitleLeft">
                         <p id="postTitleText">Spot Name</p>
                         <p id="postCoords">123.456°N, 789.012°E</p>
                         <p id="postAccessibility">Accessibility: Very Bad</p>
-                        <ul></ul>
                     </div>
+                    <div id="postMap"></div>
                 </div>
-                <p></p>
+                <p id="postBody">Body text. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
             </div>
         </div>
+        <div id="comments"></div>
     </div>
+    <form id="commentField" onsubmit="addComment(event)">
+        <input type="text" name="commentInput" placeholder="Comment..." id="commentInput" required>
+        <button type="submit" id="commentSubmit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
+                <path d="M2.59483 12.9206C1.89812 12.6883 1.89262 12.3136 2.60917 12.0748L28.0574 3.59202C28.762 3.35714 29.1662 3.75155 28.9687 4.44259L21.6978 29.8909C21.4964 30.5955 21.0903 30.62 20.7926 29.9501L15.9999 19.1667L23.9999 8.50007L13.3332 16.5L2.59483 12.9206Z" fill="#00EC6E"/>
+            </svg>
+        </button>
+    </form>
 </body>
 </html>

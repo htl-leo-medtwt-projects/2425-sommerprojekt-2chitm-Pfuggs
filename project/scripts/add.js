@@ -79,12 +79,22 @@ function loadSpots() {
 
 function addSpot(event) {
     event.preventDefault();
+
+    if (localStorage.getItem("currentIndex") == null) {
+        localStorage.setItem("currentIndex", "0");
+    }
+
     let spot = {
+        "index": localStorage.getItem("currentIndex"),
         "title": document.getElementById("titleInput").value,
         "body": document.getElementById("bodyInput").value,
         "lat": document.getElementById("latInput").value,
-        "lon": document.getElementById("lonInput").value
+        "lon": document.getElementById("lonInput").value,
+        "accessibility": document.getElementById("accessibilityInput").value,
+        "comments": []
     }
+
+    localStorage.setItem("currentIndex", parseInt(localStorage.getItem("currentIndex"))+1);
 
     let spots = loadSpots();
     if (spots == null) {
