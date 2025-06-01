@@ -111,6 +111,7 @@ body {
 
 #postTitleLeft * {
     margin: 0.3rem 0;
+    width: auto;
 }
 
 #postTitleText {
@@ -136,6 +137,14 @@ body {
     line-height: normal;
 }
 
+#postRating {
+    color: var(--accent-2);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
 #accessbilityList {
     font-size: 0.75rem;
     font-style: normal;
@@ -144,9 +153,10 @@ body {
 }
 
 #postMap {
-    width: 8rem;
-    height: 8rem;
+    width: 16vh;
+    height: 16vh;
     border-radius: 0.5rem;
+    flex-shrink: 0;
 }
 
 #commentField {

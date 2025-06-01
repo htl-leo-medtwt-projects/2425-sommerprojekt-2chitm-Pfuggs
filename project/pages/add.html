@@ -21,7 +21,6 @@
         <form onsubmit="addSpot(event)">
             <input type="text" name="titleInput" id="titleInput" placeholder="Enter title..." required>
             
-            <!-- not functional -->
             <div id="groupCategory">
                 <select name="groupSelect" id="groupSelect" required> 
                     <option value="" disabled selected hidden>Select Group</option>
@@ -30,16 +29,25 @@
                     <option value="whoop">Whoop</option>
                     <option value="bigquads">Big quads</option>
                 </select>
-                <select name="categorySelect" id="categorySelect">
+                <select name="categorySelect" id="categorySelect" required>
                     <option value="" disabled selected hidden>Category</option>
-                    <option value="park">Park</option>
-                    <option value="field">Field</option>
-                    <option value="bando">Bando</option>
-                    <option value="other">Other</option>
+                    <option value="Park">Park</option>
+                    <option value="Field">Field</option>
+                    <option value="Bando">Bando</option>
+                    <option value="Long Range">Long Range</option>
+                    <option value="Other">Other</option>
                 </select>
             </div>
-            
-            <input type="text" name="accessiblityInput" id="accessibilityInput" placeholder="Enter accessibility..." required>
+            <div id="ratingContainer">
+                <h3 id="ratingTitle">Rating: OK</h3>
+                <input type="range" name="ratingInput" id="ratingInput" min="0" max="10" step="1" value="5" onchange="updateRating(this.value)" required>
+                <div id="ratingLabels">
+                    <span>Very bad</span>
+                    <span>OK</span>
+                    <span>Exceptional</span>
+                </div>
+            </div>
+            <input type="text" name="accessiblityInput" id="accessibilityInput" placeholder="Enter accessibility..." maxlength="35" required>
             <textarea name="bodyInput" id="bodyInput" rows="10" placeholder='Enter body text...' required></textarea>
             <div id="mapOuter">
                 <div id="mapInner">

@@ -154,3 +154,59 @@ form {
     line-height: normal;
     cursor: pointer;
 }
+
+#ratingContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    width: 100%;
+}
+
+#ratingLabels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    color: var(--accent-2);
+    font-weight: bold;
+}
+
+#ratingLabels span:first-child {
+    text-align: left;
+}
+
+#ratingLabels span:last-child {
+    text-align: right;
+}
+
+#ratingInput {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 1.5rem;
+    background: var(--primary-2);
+    outline: none;
+    border-radius: 1.5rem;
+}
+
+#ratingInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 2rem;
+  background: var(--accent-3);
+  cursor: pointer;
+}
+
+#ratingInput::-moz-range-thumb {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 2rem;
+  background: var(--accent-3);
+  cursor: pointer;
+}
+
+#ratingTitle {
+    color: var(--primary-1);
+    margin: 0 0 0.4rem 0;
+}

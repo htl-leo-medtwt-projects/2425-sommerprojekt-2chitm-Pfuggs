@@ -1,4 +1,19 @@
 let defaultCoords = [];
+
+const ratings = [
+  "Very Bad",    // 0
+  "Bad",        // 1
+  "Poor",       // 2
+  "Below Avg",  // 3
+  "Weak",       // 4
+  "OK",         // 5
+  "Good",       // 6
+  "Very Good",  // 7
+  "Great",      // 8
+  "Excellent",  // 9
+  "Exceptional" // 10
+];
+
 document.getElementById("bigMap").style.display = "none";
 document.getElementById("addMap").style.display = "";
 
@@ -91,6 +106,9 @@ function addSpot(event) {
         "lat": document.getElementById("latInput").value,
         "lon": document.getElementById("lonInput").value,
         "accessibility": document.getElementById("accessibilityInput").value,
+        "group": document.getElementById("groupSelect").value,
+        "category": document.getElementById("categorySelect").value,
+        "rating": document.getElementById("ratingInput").value,
         "comments": []
     }
 
@@ -105,4 +123,8 @@ function addSpot(event) {
     localStorage.setItem('spots', JSON.stringify(spots));
 
     window.history.go(-1);
+}
+
+function updateRating(value) {
+    document.getElementById("ratingTitle").innerHTML = `Rating: ${ratings[value]}`;
 }
